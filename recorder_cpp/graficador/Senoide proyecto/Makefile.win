@@ -1,0 +1,32 @@
+# Project: Senoides
+# Makefile created by Dev-C++ 5.6.2
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+RES      = Senoides_private.res
+OBJ      = source.o $(RES)
+LINKOBJ  = source.o $(RES)
+LIBS     = -static-libgcc -lbgi -lgdi32 -luser32 -g3
+INCS     = 
+CXXINCS  = 
+BIN      = Senoides.exe
+CXXFLAGS = $(CXXINCS) -std=c90 -Wall -Wfatal-errors -g3
+CFLAGS   = $(INCS) -std=c90 -Wall -Wfatal-errors -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+source.o: source.cpp
+	$(CPP) -c source.cpp -o source.o $(CXXFLAGS)
+
+Senoides_private.res: Senoides_private.rc 
+	$(WINDRES) -i Senoides_private.rc --input-format=rc -o Senoides_private.res -O coff 

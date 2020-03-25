@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>funciones.htm</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="generator" content="SynEdit HTML exporter" />
+<style type="text/css">
+<!--
+body { color: #000000; background-color: #FFD47F; }
+.cpp1-assembler { color: #99CC00; }
+.cpp1-character { color: #000000; }
+.cpp1-comment { color: #3399FF; font-style: italic; }
+.cpp1-float { color: #800080; }
+.cpp1-hexadecimal { background-color: #FFFFFF; color: #008000; font-weight: bold; }
+.cpp1-identifier { color: #000000; }
+.cpp1-illegalchar { color: #000000; }
+.cpp1-number { color: #800080; }
+.cpp1-octal { color: #008000; }
+.cpp1-preprocessor { color: #008000; font-weight: bold; }
+.cpp1-reservedword { color: #0000FF; font-weight: bold; }
+.cpp1-space { background-color: #FFD47F; color: #000000; }
+.cpp1-string { color: #FF0000; }
+.cpp1-symbol { color: #8001D5; font-weight: bold; }
+-->
+</style>
+</head>
+<body>
+<pre>
+<code><span style="font: 10pt Courier New;">
+<span class="cpp1-reservedword">typedef</span><span class="cpp1-space"> </span><span class="cpp1-reservedword">unsigned</span><span class="cpp1-space"> </span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> int8</span><span class="cpp1-symbol">;
+
+</span><span class="cpp1-comment">/* Funciones utiles*/
+
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> Title</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> </span><span class="cpp1-symbol">*</span><span class="cpp1-identifier">titulo</span><span class="cpp1-symbol">);
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> IntToString</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> num</span><span class="cpp1-symbol">,</span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> </span><span class="cpp1-symbol">*</span><span class="cpp1-identifier">Str</span><span class="cpp1-symbol">);
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> LimpiarBuf</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> </span><span class="cpp1-symbol">*</span><span class="cpp1-identifier">Tex</span><span class="cpp1-symbol">);
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> marco</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">short</span><span class="cpp1-space"> x</span><span class="cpp1-symbol">,</span><span class="cpp1-reservedword">short</span><span class="cpp1-space"> y</span><span class="cpp1-symbol">,</span><span class="cpp1-reservedword">unsigned</span><span class="cpp1-space"> </span><span class="cpp1-reservedword">short</span><span class="cpp1-space"> altura</span><span class="cpp1-symbol">,</span><span class="cpp1-reservedword">unsigned</span><span class="cpp1-space"> </span><span class="cpp1-reservedword">short</span><span class="cpp1-space"> ancho</span><span class="cpp1-symbol">,</span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> </span><span class="cpp1-symbol">*</span><span class="cpp1-identifier">Word</span><span class="cpp1-symbol">);
+
+
+</span><span class="cpp1-comment">/*  Definicion de funciones */
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> Title</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> </span><span class="cpp1-symbol">*</span><span class="cpp1-identifier">titulo</span><span class="cpp1-symbol">)
+{
+</span><span class="cpp1-space">     </span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> output</span><span class="cpp1-symbol">[]=</span><span class="cpp1-string">&quot;title &quot;</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">     strcat</span><span class="cpp1-symbol">(</span><span class="cpp1-space"> output</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">titulo</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">     system</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">output</span><span class="cpp1-symbol">);
+}
+
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> IntToString</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> num</span><span class="cpp1-symbol">,</span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> </span><span class="cpp1-symbol">*</span><span class="cpp1-identifier">Str</span><span class="cpp1-symbol">)
+{
+</span><span class="cpp1-space">     
+     </span><span class="cpp1-reservedword">short</span><span class="cpp1-space"> aux</span><span class="cpp1-symbol">=</span><span class="cpp1-identifier">num</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">dir</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">     
+     </span><span class="cpp1-reservedword">if</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">num</span><span class="cpp1-symbol">&lt;</span><span class="cpp1-number">0</span><span class="cpp1-symbol">)</span><span class="cpp1-space"> dir</span><span class="cpp1-symbol">++;</span><span class="cpp1-space">         </span><span class="cpp1-comment">// si es negativo se aparta un byte para &quot;-&quot;
+</span><span class="cpp1-space">     </span><span class="cpp1-reservedword">do</span><span class="cpp1-space">                       </span><span class="cpp1-comment">// se obtiene la cantidad de digitos del num
+</span><span class="cpp1-space">     </span><span class="cpp1-symbol">{
+</span><span class="cpp1-space">      dir</span><span class="cpp1-symbol">++;</span><span class="cpp1-space">                  </span><span class="cpp1-comment">// variable donde se guarda la cantidad de digitos
+</span><span class="cpp1-space">      aux</span><span class="cpp1-symbol">/=</span><span class="cpp1-number">10</span><span class="cpp1-symbol">;</span><span class="cpp1-space">         
+      </span><span class="cpp1-symbol">}
+</span><span class="cpp1-space">     </span><span class="cpp1-reservedword">while</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">aux</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">     aux</span><span class="cpp1-symbol">=</span><span class="cpp1-identifier">num</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">     num</span><span class="cpp1-symbol">=((</span><span class="cpp1-identifier">num</span><span class="cpp1-symbol">)&gt;</span><span class="cpp1-number">0</span><span class="cpp1-symbol">)?(</span><span class="cpp1-identifier">num</span><span class="cpp1-symbol">):(</span><span class="cpp1-identifier">num</span><span class="cpp1-symbol">*(-</span><span class="cpp1-number">1</span><span class="cpp1-symbol">));</span><span class="cpp1-space">   </span><span class="cpp1-comment">// se halla el ABS(num)   
+</span><span class="cpp1-space">     </span><span class="cpp1-reservedword">for</span><span class="cpp1-symbol">(;</span><span class="cpp1-identifier">dir</span><span class="cpp1-symbol">;)
+</span><span class="cpp1-space">    </span><span class="cpp1-symbol">{</span><span class="cpp1-space"> Str</span><span class="cpp1-symbol">[--</span><span class="cpp1-identifier">dir</span><span class="cpp1-symbol">]=</span><span class="cpp1-identifier">num</span><span class="cpp1-symbol">%</span><span class="cpp1-number">10</span><span class="cpp1-space"> </span><span class="cpp1-symbol">+</span><span class="cpp1-space"> </span><span class="cpp1-number">48</span><span class="cpp1-symbol">;</span><span class="cpp1-space"> </span><span class="cpp1-comment">//se empieza por el ultimo dig. del num y se suma 48 para que sea Ascii
+</span><span class="cpp1-space">                              </span><span class="cpp1-comment">//y se empieza alojar de la parte final de *Str
+</span><span class="cpp1-space">      num</span><span class="cpp1-symbol">/=</span><span class="cpp1-number">10</span><span class="cpp1-symbol">;</span><span class="cpp1-space">                </span><span class="cpp1-comment">// se suprime el ultimo digito, ya que se solo asume la parte entera
+</span><span class="cpp1-space">                              </span><span class="cpp1-comment">//y el ultimo digito es parte decimal     
+</span><span class="cpp1-space">    </span><span class="cpp1-symbol">}
+</span><span class="cpp1-space">    </span><span class="cpp1-reservedword">if</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">aux</span><span class="cpp1-symbol">&lt;</span><span class="cpp1-number">0</span><span class="cpp1-symbol">)
+</span><span class="cpp1-space">    Str</span><span class="cpp1-symbol">[</span><span class="cpp1-number">0</span><span class="cpp1-symbol">]=</span><span class="cpp1-character">'-'</span><span class="cpp1-symbol">;</span><span class="cpp1-space">               </span><span class="cpp1-comment">// se agrega el signo , si era negativo
+</span><span class="cpp1-symbol">}
+
+
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> LimpiarBuf</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> </span><span class="cpp1-symbol">*</span><span class="cpp1-identifier">Tex</span><span class="cpp1-symbol">)
+{
+</span><span class="cpp1-space">     </span><span class="cpp1-reservedword">for</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">int8 i</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">;</span><span class="cpp1-identifier">i</span><span class="cpp1-symbol">&lt;</span><span class="cpp1-reservedword">sizeof</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">Tex</span><span class="cpp1-symbol">);</span><span class="cpp1-identifier">i</span><span class="cpp1-symbol">++)
+</span><span class="cpp1-space">     Tex</span><span class="cpp1-symbol">[</span><span class="cpp1-identifier">i</span><span class="cpp1-symbol">]=</span><span class="cpp1-character">'\0'</span><span class="cpp1-symbol">;
+}
+
+</span><span class="cpp1-reservedword">void</span><span class="cpp1-space"> marco</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">short</span><span class="cpp1-space"> x</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">,</span><span class="cpp1-reservedword">short</span><span class="cpp1-space"> y</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">,</span><span class="cpp1-reservedword">unsigned</span><span class="cpp1-space"> </span><span class="cpp1-reservedword">short</span><span class="cpp1-space"> altura</span><span class="cpp1-symbol">=</span><span class="cpp1-number">3</span><span class="cpp1-symbol">,</span><span class="cpp1-reservedword">unsigned</span><span class="cpp1-space"> </span><span class="cpp1-reservedword">short</span><span class="cpp1-space"> ancho</span><span class="cpp1-symbol">=</span><span class="cpp1-number">3</span><span class="cpp1-symbol">,</span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> </span><span class="cpp1-symbol">*</span><span class="cpp1-identifier">Word</span><span class="cpp1-symbol">=</span><span class="cpp1-string">&quot; &quot;</span><span class="cpp1-symbol">)
+{
+</span><span class="cpp1-space">     ancho</span><span class="cpp1-symbol">=(</span><span class="cpp1-identifier">strlen</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">Word</span><span class="cpp1-symbol">)&gt;</span><span class="cpp1-identifier">ancho</span><span class="cpp1-symbol">)?(</span><span class="cpp1-identifier">strlen</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">Word</span><span class="cpp1-symbol">)):(</span><span class="cpp1-identifier">ancho</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">     
+     </span><span class="cpp1-reservedword">static</span><span class="cpp1-space"> int8 i</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">j</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">     </span><span class="cpp1-reservedword">for</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">i</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">;</span><span class="cpp1-identifier">i</span><span class="cpp1-symbol">++&lt;</span><span class="cpp1-identifier">y</span><span class="cpp1-symbol">;)</span><span class="cpp1-space"> printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);</span><span class="cpp1-comment">// mov en y
+</span><span class="cpp1-space">     </span><span class="cpp1-reservedword">for</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">i</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">;</span><span class="cpp1-identifier">i</span><span class="cpp1-symbol">++&lt;</span><span class="cpp1-identifier">x</span><span class="cpp1-symbol">;)</span><span class="cpp1-space"> printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot; &quot;</span><span class="cpp1-symbol">);</span><span class="cpp1-comment">// mov en x
+</span><span class="cpp1-space">     </span><span class="cpp1-comment">//inicio de marco
+</span><span class="cpp1-space">     </span><span class="cpp1-comment">// primera lines de marco
+</span><span class="cpp1-space">     printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\xDA&quot;</span><span class="cpp1-symbol">);</span><span class="cpp1-space">                       </span><span class="cpp1-comment">// codigo ascii
+</span><span class="cpp1-space">     </span><span class="cpp1-reservedword">for</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">i</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">;</span><span class="cpp1-identifier">i</span><span class="cpp1-symbol">++&lt;</span><span class="cpp1-identifier">ancho</span><span class="cpp1-symbol">;)</span><span class="cpp1-space"> printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\xC4&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">     printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\xBF\n&quot;</span><span class="cpp1-symbol">);</span><span class="cpp1-space"> 
+     </span><span class="cpp1-comment">// parte central
+</span><span class="cpp1-space">     </span><span class="cpp1-comment">// Escritura de palabra
+</span><span class="cpp1-space">      </span><span class="cpp1-reservedword">for</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">i</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">;</span><span class="cpp1-identifier">i</span><span class="cpp1-symbol">++&lt;</span><span class="cpp1-identifier">x</span><span class="cpp1-symbol">;)</span><span class="cpp1-space"> printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot; &quot;</span><span class="cpp1-symbol">);</span><span class="cpp1-space"> printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\xB3&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">      printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;%-*s&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">ancho</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">Word</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">      printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\xB3\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space"> 
+      </span><span class="cpp1-comment">// continuacion
+</span><span class="cpp1-space">     </span><span class="cpp1-reservedword">for</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">j</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">;</span><span class="cpp1-identifier">j</span><span class="cpp1-symbol">++&lt;</span><span class="cpp1-identifier">altura</span><span class="cpp1-symbol">-</span><span class="cpp1-number">1</span><span class="cpp1-symbol">;)
+</span><span class="cpp1-space">     </span><span class="cpp1-symbol">{
+</span><span class="cpp1-space">     </span><span class="cpp1-reservedword">for</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">i</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">;</span><span class="cpp1-identifier">i</span><span class="cpp1-symbol">++&lt;</span><span class="cpp1-identifier">x</span><span class="cpp1-symbol">;)</span><span class="cpp1-space"> printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot; &quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">      printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\xB3&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">     </span><span class="cpp1-reservedword">for</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">i</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">;</span><span class="cpp1-identifier">i</span><span class="cpp1-symbol">++&lt;</span><span class="cpp1-identifier">ancho</span><span class="cpp1-symbol">;)</span><span class="cpp1-space"> printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot; &quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">     printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\xB3&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">     printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">     </span><span class="cpp1-symbol">}
+</span><span class="cpp1-space">     
+     </span><span class="cpp1-comment">// Parte Final
+</span><span class="cpp1-space">     </span><span class="cpp1-reservedword">for</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">i</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">;</span><span class="cpp1-identifier">i</span><span class="cpp1-symbol">++&lt;</span><span class="cpp1-identifier">x</span><span class="cpp1-symbol">;)</span><span class="cpp1-space"> printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot; &quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">     printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\xC0&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">     </span><span class="cpp1-reservedword">for</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">i</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">;</span><span class="cpp1-identifier">i</span><span class="cpp1-symbol">++&lt;</span><span class="cpp1-identifier">ancho</span><span class="cpp1-symbol">;)</span><span class="cpp1-space"> printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\xC4&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">     printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\xD9\n&quot;</span><span class="cpp1-symbol">);</span><span class="cpp1-space"> 
+     </span><span class="cpp1-symbol">}
+
+</span></span>
+</code></pre>
+</body>
+</html>
