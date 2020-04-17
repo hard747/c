@@ -202,6 +202,7 @@ int main()
 	pintar_limites();
 	Nave N=Nave(37,30,3,3);
 	N.pintar();
+	
 	//Asteroide A = Asteroide(10,4),B=Asteroide(4,8), C=Asteroide(15,8);
 	list<Asteroide*> K;
 	list<Asteroide*>::iterator itK;
